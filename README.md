@@ -7,13 +7,17 @@
  <i>This is not the greatest line reader in the world, this is just a tribute.</i>
 </p>
 
-Fast line based iteration almost entirely lifted from ripgreps [grep_searcher](https://github.com/BurntSushi/ripgrep/tree/master/crates/searcher).
+Fast line based iteration almost entirely lifted from ripgrep's [grep_searcher](https://github.com/BurntSushi/ripgrep/tree/master/crates/searcher).
 
 All credit to Andrew Gallant and the ripgrep contributors.
 
 ## Why?
 
-I needed a fast way to read lines without copying that didn't involve a closure a la `bstr`, and was flexible enough to handle any line length unlike `rust-linereader`. I also wanted the generic `LineIter` to work with `memmap` files.
+- Doesn't rely on a clousre like the `bstr::for_line*` methods (useful in some award lifetime scenarios).
+- No silently capped line lengths unlike `rust-linereader`
+- Brings the `LineIter` with for working with `memmap` files
+
+Not all of this functionality was exposed in the `grep_searcher` crate, and rightly so as a lot of it had `grep` specific configurations embeded into the logic (i.e. binary detection).
 
 ## What have I changed?
 
