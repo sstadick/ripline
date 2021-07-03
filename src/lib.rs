@@ -160,6 +160,7 @@ impl ops::Index<Match> for str {
 #[derive(Clone, Copy, Debug, Eq, Hash, PartialEq)]
 pub struct LineTerminator(LineTerminatorImp);
 
+#[allow(clippy::upper_case_acronyms)]
 #[derive(Clone, Copy, Debug, Eq, Hash, PartialEq)]
 enum LineTerminatorImp {
     /// Any single byte representing a line terminator.

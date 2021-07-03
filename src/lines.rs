@@ -27,7 +27,7 @@ impl<'b> LineIter<'b> {
     pub fn new(line_term: u8, bytes: &'b [u8]) -> LineIter<'b> {
         LineIter {
             line_term,
-            bytes: bytes,
+            bytes,
             stepper: LineStep::new(line_term, 0, bytes.len()),
         }
     }
@@ -74,7 +74,7 @@ impl LineStep {
         LineStep {
             line_term,
             pos: start,
-            end: end,
+            end,
         }
     }
 
@@ -208,7 +208,7 @@ mod tests {
     use std::ops::Range;
     use std::str;
 
-    const SHERLOCK: &'static str = "\
+    const SHERLOCK: &str = "\
 For the Doctor Watsons of this world, as opposed to the Sherlock
 Holmeses, success in the province of detective work must always
 be, to a very large extent, the result of luck. Sherlock Holmes
