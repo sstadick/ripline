@@ -12,7 +12,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let mut out = stdout(ColorChoice::Never);
 
-    // The builder is overly verbose just to demonstrate options
     let reader = File::open(&path)?;
     let terminator = LineTerminator::byte(b'\n');
     let mut line_buffer = LineBufferBuilder::new().build();
