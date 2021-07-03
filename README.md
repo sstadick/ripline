@@ -13,7 +13,7 @@ All credit to Andrew Gallant and the ripgrep contributors.
 
 ## Why?
 
-- Doesn't rely on a clousre like the `bstr::for_line*` methods (useful in some award lifetime scenarios).
+- Doesn't rely on a clousre like the `bstr::for_line*` methods (useful in some awkward lifetime scenarios).
 - No silently capped line lengths unlike `rust-linereader`
 - Brings the `LineIter` with for working with `memmap` files
 
@@ -78,5 +78,6 @@ The input used was [all_train.csv](https://archive.ics.uci.edu/ml/machine-learni
 | lines()               | 5.05s |  6930901/s |  4889.79 MB/s |
 
 Note that `read` and `next_batch` are not counting lines.
+`read_until()` doesn't seem to perform as well in real-life scenarios as it does on this benchmark and I'm not sure why.
 
 Hardware: Ubuntu 20 AMD Ryzen 9 3950X 16-Core Processor w/ 64 GB DDR4 memory and 1TB NVMe Drive
