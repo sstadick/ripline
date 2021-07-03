@@ -1,0 +1,36 @@
+[package]
+name = "ripline"
+authors = ["Seth Stadick <sstadick@gmail.com>"]
+version = "0.1.0"
+edition = "2018"
+license = "Unlicense/MIT"
+readme = "README.md"
+documentation = "https://docs.rs/ripline"
+homepage = "https://github.com/sstadick/ripline"
+repository = "https://github.com/sstadick/ripline"
+keywords = ["lines", "reader"]
+desription = """
+This is not the greatest line reader in the world, this is just a tribute.
+
+Fast line based iteration almost entirely lifted from ripgreps grep_searcher.
+
+All credit to Andrew Gallant and the ripgrep contributors.
+"""
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bstr = {version = "0.2", default-features = false, features = ["std"]}
+bytecount = "0.6"
+
+[dev-dependencies]
+grep-cli = "0.1.5"
+termcolor = "1.1.2"
+rand = "0.7.0"
+linereader = "0.4.0"
+memchr = "2"
+memmap2 = "0.3.0"
+
+
+[features]
+default = ["bytecount/runtime-dispatch-simd"]
