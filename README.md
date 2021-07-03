@@ -1,6 +1,11 @@
-# ripline
+# 🌊 ripline
 
-_This is not the greatest line reader in the world, this is just a tribute._
+<p align="center">
+  <a href="https://github.com/sstadick/ripline/actions?query=workflow%3Aci"><img src="https://github.com/sstadick/ripline/workflows/ci/badge.svg" alt="Build Status"></a>
+  <img src="https://img.shields.io/crates/l/ripline.svg" alt="license">
+  <a href="https://crates.io/crates/ripline"><img src="https://img.shields.io/crates/v/ripline.svg?colorB=319e8c" alt="Version info"></a><br>
+ <i>This is not the greatest line reader in the world, this is just a tribute.</i>
+</p>
 
 Fast line based iteration almost entirely lifted from ripgreps [grep_searcher](https://github.com/BurntSushi/ripgrep/tree/master/crates/searcher).
 
@@ -8,11 +13,11 @@ All credit to Andrew Gallant and the ripgrep contributors.
 
 ## Why?
 
-I needed a fast way to read lines without copying that didn't involve a closure a la `bstr`, and was flexible enough to handle any line length unlike `rust-linereader`.
+I needed a fast way to read lines without copying that didn't involve a closure a la `bstr`, and was flexible enough to handle any line length unlike `rust-linereader`. I also wanted the generic `LineIter` to work with `memmap` files.
 
 ## What have I changed?
 
-Not much. I took out some of the ripgrep specific such as the binary detection and consolidated a few of the helper stucts from the other `grep_*` crates.
+Not much. I took out some of the ripgrep specific logic such as the binary detection, some search related configs, and consolidated a few of the helper stucts from the other `grep_*` crates.
 
 ## Example
 
