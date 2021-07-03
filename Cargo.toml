@@ -9,7 +9,7 @@ documentation = "https://docs.rs/ripline"
 homepage = "https://github.com/sstadick/ripline"
 repository = "https://github.com/sstadick/ripline"
 keywords = ["lines", "reader"]
-desription = """
+description = """
 This is not the greatest line reader in the world, this is just a tribute.
 
 Fast line based iteration almost entirely lifted from ripgreps grep_searcher.
